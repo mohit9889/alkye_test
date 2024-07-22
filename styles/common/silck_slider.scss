@@ -1,0 +1,70 @@
+.image-carousal {
+  .slick-list {
+    padding-left: 0 !important;
+
+    .carousel-slide {
+      img {
+        height: 250px;
+        width: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+
+        @media (min-width: 430px) {
+          height: 350px;
+          width: 212px;
+          border-radius: 20px;
+        }
+
+        @media (min-width: 768px) {
+          height: 400px;
+          width: 200px;
+          border-radius: 40px;
+        }
+
+        @media (min-width: 1024px) {
+          height: 600px;
+          width: 320px;
+          border-radius: 40px;
+        }
+
+        @media (min-width: 1536px) {
+          height: 700px;
+          width: 425px;
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+
+  .slick-dots {
+    // bottom: -78px;
+    width: max-content;
+    // right: 90px;
+    bottom: -10%;
+    right: 5%;
+
+    @media (min-width: 430px) {
+      margin: 10px;
+      bottom: -15%;
+    }
+
+    li {
+      margin: 0;
+      @media (min-width: 430px) {
+        margin: 10px;
+      }
+      button {
+        &::before {
+          color: white !important;
+          font-size: 10px;
+          @media (min-width: 430px) {
+            font-size: 15px;
+          }
+          @media (min-width: 768px) {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}

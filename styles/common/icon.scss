@@ -1,0 +1,30 @@
+// Define mixin to set height and width
+@mixin set-dimensions($size) {
+  width: $size;
+  height: $size;
+}
+
+.icon {
+  &-eye svg {
+    @include set-dimensions(24px);
+  }
+  &-social {
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    @media (min-width: 768px) {
+      width: auto;
+      height: auto;
+    }
+  }
+  &-carousal svg {
+    height: 20px;
+    width: 20px;
+  }
+  &-white {
+    svg path {
+      fill: #fff;
+    }
+  }
+}
