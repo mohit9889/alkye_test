@@ -1,11 +1,11 @@
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 // Function to set a cookie
 export const setCookie = (key, value, options = {}) => {
   try {
     Cookies.set(key, value, options);
   } catch (error) {
-    console.error("Error setting cookie:", error);
+    console.error('Error setting cookie:', error);
   }
 };
 
@@ -14,7 +14,7 @@ export const getCookie = (key) => {
   try {
     return Cookies.get(key);
   } catch (error) {
-    console.error("Error getting cookie:", error);
+    console.error('Error getting cookie:', error);
     return null;
   }
 };
@@ -24,6 +24,6 @@ export const removeCookie = (key, options = {}) => {
   try {
     Cookies.remove(key, options);
   } catch (error) {
-    console.error("Error removing cookie:", error);
+    console.error('Error removing cookie:', error);
   }
 };

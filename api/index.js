@@ -1,14 +1,14 @@
-import { setCookie } from "~/utils/cookieUtils";
-import { setItemToLocalStorage } from "~/utils/localStorageUtils";
+import { setCookie } from '~/utils/cookieUtils';
+import { setItemToLocalStorage } from '~/utils/localStorageUtils';
 
 export const login = async ({ username, password }) => {
-  const url = "https://untitled-twkmuar27a-uc.a.run.app/api/login/";
+  const url = 'https://untitled-twkmuar27a-uc.a.run.app/api/login/';
 
   try {
     const response = await fetch(url, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password }),
     });
@@ -22,25 +22,25 @@ export const login = async ({ username, password }) => {
 
     // Set the token in cookies
     if (data.token) {
-      setCookie("token", data.token, { expires: 7 }); // Cookie expires in 7 days
-      setItemToLocalStorage("token", data.token);
+      setCookie('token', data.token, { expires: 7 }); // Cookie expires in 7 days
+      setItemToLocalStorage('token', data.token);
     }
 
     return data;
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
   }
 };
 
 export const fetchArticleData = async (token) => {
-  const url = "https://untitled-twkmuar27a-uc.a.run.app/api";
+  const url = 'https://untitled-twkmuar27a-uc.a.run.app/api';
 
   try {
     const response = await fetch(url, {
-      method: "GET",
+      method: 'GET',
       headers: {
         Authorization: `Token ${token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
@@ -54,6 +54,6 @@ export const fetchArticleData = async (token) => {
     return data;
   } catch (error) {
     // Catch and handle any errors
-    console.error("Error:", error);
+    console.error('Error:', error);
   }
 };

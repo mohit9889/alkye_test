@@ -1,13 +1,10 @@
-import Slider from "react-slick";
-import Image from "next/image";
-import ArrowRight from "~/public/assets/icons/arrow-right.svg";
+import Slider from 'react-slick';
+import Image from 'next/image';
+import ArrowRight from '~/public/assets/icons/arrow-right.svg';
 
 const NextArrow = ({ onClick }) => {
   return (
-    <div
-      className="absolute cursor-pointer bottom-[-10%] left-[30px]"
-      onClick={onClick}
-    >
+    <div className="absolute bottom-[-10%] left-[30px] cursor-pointer" onClick={onClick}>
       <span className="icon-white icon-carousal block">
         <ArrowRight />
       </span>
@@ -17,18 +14,15 @@ const NextArrow = ({ onClick }) => {
 
 const PrevArrow = ({ onClick }) => {
   return (
-    <div
-      className="absolute  cursor-pointer bottom-[-10%] left-0"
-      onClick={onClick}
-    >
-      <span className="icon-white icon-carousal block transform rotate-180">
+    <div className="absolute bottom-[-10%] left-0 cursor-pointer" onClick={onClick}>
+      <span className="icon-white icon-carousal block rotate-180 transform">
         <ArrowRight />
       </span>
     </div>
   );
 };
 
-const ImageCarousal = ({ data = [], title = "" }) => {
+const ImageCarousal = ({ data = [], title = '' }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -61,9 +55,7 @@ const ImageCarousal = ({ data = [], title = "" }) => {
   };
   return (
     <div className="mb-[80px] lg:mb-[160px]">
-      <h1 className="font-500 text-2xl !leading-[25px] lg:!leading-[50px] lg:text-5xl">
-        {title}
-      </h1>
+      <h1 className="text-2xl font-500 !leading-[25px] lg:text-5xl lg:!leading-[50px]">{title}</h1>
       <div className="mt-[34px]">
         <Slider {...settings} className="image-carousal relative">
           {data.map((item, index) => (

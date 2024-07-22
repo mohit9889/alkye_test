@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Input = ({ className = "", ...props }) => {
+const Input = ({ className = '', ...props }) => {
   return <input className={className} {...props} />;
 };
 

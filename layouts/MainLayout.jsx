@@ -1,8 +1,8 @@
-import Footer from "./Footer";
+import Footer from './Footer';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="bg-light-gray font-testSoehne min-h-screen">
+    <div className="min-h-screen bg-light-gray font-testSoehne">
       <main>{children}</main>
       <Footer />
     </div>

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { getItemFromLocalStorage } from "~/utils/localStorageUtils";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { getItemFromLocalStorage } from '~/utils/localStorageUtils';
 
 // Utility function to check authentication
 const isAuthenticated = () => {
-  if (typeof window !== "undefined") {
-    const token = getItemFromLocalStorage("token");
+  if (typeof window !== 'undefined') {
+    const token = getItemFromLocalStorage('token');
     return Boolean(token);
   }
   return false;
@@ -20,7 +20,7 @@ const withAuth = (WrappedComponent) => {
       const checkAuth = () => {
         if (!isAuthenticated()) {
           // Redirect to login page if not authenticated
-          router.push("/");
+          router.push('/');
         } else {
           setLoading(false);
         }
